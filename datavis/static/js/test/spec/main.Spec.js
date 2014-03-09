@@ -1,10 +1,16 @@
-define([ 'app/main' ], function(Main) {
+define([ 'app/foo' ], function(foo) {
 
   describe('defaults test suite', function() {
 
     it('works fine', function() {
 
       expect(true).to.equal(true);
+
+    });
+
+    it('is foobar', function() {
+
+      expect(foo.foo).to.equal('bar');
 
     });
 
