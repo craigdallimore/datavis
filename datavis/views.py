@@ -1,17 +1,19 @@
 import json
 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http      import HttpResponse
 
-# Create your views here.
 def index(request):
-    return render(request, 'index.html')
 
+    return render(request, 'partial/index.jinja2')
 
-def data(request):
+def pies(request):
 
-    response = {}
-    response['result'] = 'failed'
-    response['message'] = 'You messed up'
+    response = [
+      [1,2,3],
+      [2,3,4],
+      [5,6,7]
+    ];
 
     return HttpResponse(json.dumps(response), content_type="application/json")
+

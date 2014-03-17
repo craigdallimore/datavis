@@ -11,6 +11,7 @@ require.config({
     angularRoute:   'libs/angular-route.min',
     angularAnimate: 'libs/angular-animate',
     jQuery:         'libs/jquery-1.11.0.min',
+    d3:             'libs/d3',
     domready:       'libs/domReady'
 
   },

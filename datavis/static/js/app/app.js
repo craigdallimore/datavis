@@ -5,6 +5,8 @@ define([
 
   'angular',
   'app/controllers',
+  'app/directives',
+  'app/services',
   'angularRoute'
 
 ], function(angular) {
@@ -12,6 +14,8 @@ define([
   return angular.module('datavis', [
 
     'controllers',
+    'directives',
+    'services',
     'ngRoute'
 
   ]);

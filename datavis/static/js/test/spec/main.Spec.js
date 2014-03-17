@@ -1,43 +1,12 @@
-define([ 'app/foo' ], function(foo) {
+// Main spec
+// ----------------------------------------------------------------------------
 
-  describe('defaults test suite', function() {
+// want to define 'main' but get error re: resumeBootstrap
+define([  ], function() {
 
-    it('works fine', function() {
+  describe('main', function() {
 
-      expect(true).to.equal(true);
-
-    });
-
-    it('is foobar', function() {
-
-      expect(foo.foo).to.equal('bar');
-
-    });
-
-    it('supports sinonChai spies', function() {
-
-      var obj = {
-        foo: function() { return 'bar'; }
-      };
-
-      var spy = sinon.spy(obj, 'foo');
-
-      expect(obj.foo('baz')).to.equal('bar');
-      spy.should.have.been.calledWith('baz');
-
-    });
-
-    describe('addOne Test', function() {
-
-      it('Should be 42; stubbed by sinon.', function() {
-
-        var AddOne = {};
-        AddOne.addOne = sinon.stub().returns(42);
-        assert.equal(AddOne.addOne(1), 42);
-
-      });
-
-    });
+    // not sure
 
   });
 
