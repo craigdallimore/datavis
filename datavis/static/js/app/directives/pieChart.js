@@ -5,8 +5,6 @@ define([ 'directives', 'd3' ], function(directives, d3) {
 
   directives.directive('pieChart', function() {
 
-    console.log('directive in place');
-
     return {
 
       restrict : 'EA',
@@ -16,19 +14,21 @@ define([ 'directives', 'd3' ], function(directives, d3) {
 
       link : function(scope, el, attrs) {
 
-        var data = scope.pieData;
+        var data   = scope.pieData,
+          radius   = 100,
+          diameter = radius * 2,
 
-        var color = d3.scale.category20c();
+          color = d3.scale.category20c(),
 
-        var vis = d3.select(el[0])
-                    .append('svg:svg')
-                    .data([data])
-                      .attr('width', 300)
-                      .attr('height', 300)
-                    .append('svg:g')
-                      .attr('transform', 'translate(100, 100)');
+          vis = d3.select(el[0])
+                  .append('svg:svg')
+                  .data([data])
+                    .attr('width', diameter)
+                    .attr('height', diameter)
+                  .append('svg:g')
+                    .attr('transform', 'translate(' + radius  + ', ' + radius + ')');
 
-        var arc = d3.svg.arc().outerRadius(100);
+        var arc = d3.svg.arc().outerRadius(radius);
 
         var pie = d3.layout.pie()
                     .value(function(d) { return d; });

@@ -1,5 +1,23 @@
-<p>Launch controller loaded. Kaizen.</p>
 
-<ul>
+<ul class="pie-list">
   <li ng-repeat="pieItem in pieList" pie-data="pieItem" pie-chart></li>
 </ul>
+
+<form>
+
+  <ul>
+
+    <li ng-repeat="vals in pieList">
+
+      <h2>Range</h2>
+
+      <div ng-repeat="val in vals" axis-input>
+        <input type="range" min="0" max="10" value="{{ val }}"/>
+        <span>{{ val }}</span>
+      </div>
+
+    </li>
+
+  </ul>
+
+</form>

@@ -10,6 +10,7 @@
     "karma": "0.10.x",
     "karma-mocha": "0.1.x",
     "karma-requirejs": "0.2.x",
+    "karma-coverage": "0.1.x",
     "chai": "~1.9.0",
     "karma-sinon-chai": "~0.1.4"
   },

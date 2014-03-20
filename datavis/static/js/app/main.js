@@ -8,6 +8,7 @@ require([
   'domready',
   'controllers/launch',
   'directives/pieChart',
+  'directives/axisInput',
   'services/pieData',
   'routes',
 

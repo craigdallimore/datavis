@@ -1,50 +1,66 @@
 // Karma configuration
-// Generated on Sun Mar 09 2014 11:26:34 GMT+0000 (GMT)
+// ----------------------------------------------------------------------------
 
 module.exports = function(config) {
 
   config.set({
 
-    // base path, that will be used to resolve files and exclude
-    basePath: '',
+    basePath   : '',
 
-    // frameworks to use
-    frameworks: ['mocha', 'requirejs', 'sinon-chai'],
+    frameworks : [
 
-    plugins: [
-      'karma-*'
+      'mocha',
+      'requirejs',
+      'sinon-chai'
+
     ],
 
-    // list of files / patterns to load in the browser
+    plugins : [ 'karma-*' ],
+
     files: [
+
       { pattern: 'test/**/*Spec.js', included: false },
       { pattern: 'libs/**/*.js',     included: false },
       { pattern: 'libs/**/*.map',    included: false },
       { pattern: 'app/**/*.js',      included: false },
+
       'test.amd.config.js'
+
     ],
 
-    // list of files to exclude
-    exclude: [
-      '**/*.swp'
+    exclude: [ '**/*.swp' ],
+
+    reporters: [
+
+      'progress',
+      'coverage'
+
     ],
 
-    // test results reporter to use
-    // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress'],
+    coverageReporter: {
 
-    // web server port
-    port: 9876,
+      reporters: [
 
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
+        { type : 'lcov', dir : 'test/coverage/' },
+        { type : 'text', dir : 'test/coverage/' }
 
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+      ]
 
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    },
+
+    preprocessors: {
+
+      'app/**/*.js' : [ 'coverage' ]
+
+    },
+
+    port      : 9876,
+
+    colors    : true,
+
+    logLevel  : config.LOG_INFO,
+
+    autoWatch : true,
 
     // Start these browsers, currently available:
     // - Chrome
@@ -54,12 +70,13 @@ module.exports = function(config) {
     // - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
     // - PhantomJS
     // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
+
     browsers: [
+    //  'Chrome',
       'PhantomJS'
-      //'Chrome'
     ],
 
-    // If browser does not capture in given timeout [ms], kill it
+
     captureTimeout: 60000,
 
     // Continuous Integration mode
@@ -68,3 +85,4 @@ module.exports = function(config) {
 
   });
 };
+
