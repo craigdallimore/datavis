@@ -1,7 +1,7 @@
 // Controllers spec
 // ----------------------------------------------------------------------------
 
-define([ 'app/controllers' ], function(controllers) {
+define([ 'controllers' ], function(controllers) {
 
   describe('datavis.controllers', function() {
 

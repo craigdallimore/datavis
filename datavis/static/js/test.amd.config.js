@@ -18,16 +18,16 @@ for (var file in window.__karma__.files) {
 requirejs.config({
 
   // Karma serves files from '/base'
-  baseUrl: '/base',
+  baseUrl: '/base/app',
 
   paths: {
 
-    angular:        'libs/angular',
-    angularRoute:   'libs/angular-route.min',
-    angularAnimate: 'libs/angular-animate',
-    jQuery:         'libs/jquery-1.11.0.min',
-    d3:             'libs/d3',
-    domready:       'libs/domReady'
+    angular:        '../libs/angular',
+    angularRoute:   '../libs/angular-route.min',
+    angularAnimate: '../libs/angular-animate',
+    jQuery:         '../libs/jquery-1.11.0.min',
+    d3:             '../libs/d3',
+    domready:       '../libs/domReady'
 
   },
 

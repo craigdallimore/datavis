@@ -1,7 +1,7 @@
 // App spec
 // ----------------------------------------------------------------------------
 
-define([ 'app/app' ], function(datavis) {
+define([ 'app' ], function(datavis) {
 
   describe('datavais application', function() {
 
@@ -12,9 +12,9 @@ define([ 'app/app' ], function(datavis) {
     });
 
     it('has controllers', function() {
-    
+
       expect(datavis.controllers).to.be.defined;
-    
+
     });
 
   });

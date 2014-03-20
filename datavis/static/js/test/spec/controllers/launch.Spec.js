@@ -1,7 +1,7 @@
 // Launch controller spec
 // ----------------------------------------------------------------------------
 
-define([ 'app/controllers/launch' ], function(controller) {
+define([ 'controllers/launch' ], function(controller) {
 
   describe('launch controller', function() {
 

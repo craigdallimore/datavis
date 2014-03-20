@@ -1,7 +1,7 @@
 // Routes
 // ----------------------------------------------------------------------------
 
-define(['angular', 'app/app'], function( angular, datavis ) {
+define(['angular', 'app'], function( angular, datavis ) {
 
   return datavis.config([
 

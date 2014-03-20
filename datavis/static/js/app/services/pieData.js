@@ -1,7 +1,7 @@
 // Pie Data Service
 // ----------------------------------------------------------------------------
- 
-define([ 'app/services' ], function(services) {
+
+define([ 'services' ], function(services) {
 
   services.factory('pieDataService', function($http) {
 

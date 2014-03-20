@@ -1,7 +1,7 @@
 // Pie Chart
 // ----------------------------------------------------------------------------
 
-define([ 'app/directives', 'd3' ], function(directives, d3) {
+define([ 'directives', 'd3' ], function(directives, d3) {
 
   directives.directive('pieChart', function() {
 

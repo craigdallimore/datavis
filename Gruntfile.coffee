@@ -5,7 +5,7 @@ module.exports = (grunt) ->
 
   grunt.initConfig
     dirs:
-      base:     'tempo/static/'
+      base:     'datavis/static/'
       js:       '<%= dirs.base %>js/'
       app:      '<%= dirs.base %>js/App/'
       scss:     '<%= dirs.base %>scss/'

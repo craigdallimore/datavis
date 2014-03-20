@@ -1,7 +1,7 @@
 // Routes spec
 // ----------------------------------------------------------------------------
 
-define([ 'app/routes' ], function(config) {
+define([ 'routes' ], function(config) {
 
   describe('datavis routes', function() {
 

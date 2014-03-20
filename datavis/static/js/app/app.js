@@ -4,9 +4,9 @@
 define([
 
   'angular',
-  'app/controllers',
-  'app/directives',
-  'app/services',
+  'controllers',
+  'directives',
+  'services',
   'angularRoute'
 
 ], function(angular) {

@@ -4,12 +4,12 @@
 require([
 
   'angular',
-  'app/app',
+  'app',
   'domready',
-  'app/controllers/launch',
-  'app/directives/pieChart',
-  'app/services/pieData',
-  'app/routes',
+  'controllers/launch',
+  'directives/pieChart',
+  'services/pieData',
+  'routes',
 
   ], function(angular, datavis, domReady) {
 

@@ -3,16 +3,16 @@
 
 require.config({
 
-  baseUrl: '../static/js/',
+  baseUrl: '../static/js/app/',
 
   paths: {
 
-    angular:        'libs/angular',
-    angularRoute:   'libs/angular-route.min',
-    angularAnimate: 'libs/angular-animate',
-    jQuery:         'libs/jquery-1.11.0.min',
-    d3:             'libs/d3',
-    domready:       'libs/domReady'
+    angular:        '../libs/angular',
+    angularRoute:   '../libs/angular-route.min',
+    angularAnimate: '../libs/angular-animate',
+    jQuery:         '../libs/jquery-1.11.0.min',
+    d3:             '../libs/d3',
+    domready:       '../libs/domReady'
 
   },
 
@@ -29,5 +29,5 @@ require.config({
 // http://code.angularjs.org/1.2.1/docs/guide/bootstrap#overview_deferred-bootstrap
 window.name = "NG_DEFER_BOOTSTRAP!";
 
-require([ 'app/main' ]);
+require([ 'main' ]);
 

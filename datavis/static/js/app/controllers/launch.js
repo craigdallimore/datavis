@@ -1,7 +1,7 @@
 // Launch Controller
 // ----------------------------------------------------------------------------
 
-define([ 'app/controllers', 'app/services/pieData' ], function(controllers) {
+define([ 'controllers', 'services/pieData' ], function(controllers) {
 
   controllers.controller('LaunchController', ['$scope', 'pieDataService', function($scope, pieDataService) {
 

@@ -21,7 +21,7 @@ module.exports = function(config) {
       { pattern: 'libs/**/*.js',     included: false },
       { pattern: 'libs/**/*.map',    included: false },
       { pattern: 'app/**/*.js',      included: false },
-      'test/test-main.js'
+      'test.amd.config.js'
     ],
 
     // list of files to exclude
