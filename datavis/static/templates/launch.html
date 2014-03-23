@@ -1,23 +1,30 @@
 
 <ul class="pie-list">
-  <li ng-repeat="pieItem in pieList" pie-data="pieItem" pie-chart></li>
+  <li
+    ng-repeat = "set in pieList"
+    pie-data  = "set"
+    pie-chart >
+  </li>
 </ul>
 
-<form>
+<ul class="controls-list">
 
-  <ul>
+  <li ng-repeat = "set in pieList">
 
-    <li ng-repeat="vals in pieList">
+    <div ng-repeat="item in set">
 
-      <h2>Range</h2>
+      <input
+        type     = "range"
+        min      = "0"
+        max      = "100"
+        ng-model = "item.value"
+        value    = "{{ item.value }}" />
 
-      <div ng-repeat="val in vals" axis-input>
-        <input type="range" min="0" max="10" value="{{ val }}"/>
-        <span>{{ val }}</span>
-      </div>
+      <span>{{ item.value }}</span>
 
-    </li>
+    </div>
 
-  </ul>
+  </li>
 
-</form>
+</ul>
+

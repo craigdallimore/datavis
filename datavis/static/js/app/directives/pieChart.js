@@ -5,6 +5,10 @@ define([ 'directives', 'd3' ], function(directives, d3) {
 
   directives.directive('pieChart', function() {
 
+    var radius = 100,
+      diameter = radius * 2,
+      color    = d3.scale.category20c();
+
     return {
 
       restrict : 'EA',
@@ -14,11 +18,7 @@ define([ 'directives', 'd3' ], function(directives, d3) {
 
       link : function(scope, el, attrs) {
 
-        var data   = scope.pieData,
-          radius   = 100,
-          diameter = radius * 2,
-
-          color = d3.scale.category20c(),
+        var data = scope.pieData,
 
           vis = d3.select(el[0])
                   .append('svg:svg')
@@ -28,20 +28,29 @@ define([ 'directives', 'd3' ], function(directives, d3) {
                   .append('svg:g')
                     .attr('transform', 'translate(' + radius  + ', ' + radius + ')');
 
-        var arc = d3.svg.arc().outerRadius(radius);
+        scope.$watch('pieData', function(newVal, oldVal) {
 
-        var pie = d3.layout.pie()
-                    .value(function(d) { return d; });
+          // clear elements
+          vis.selectAll('*').remove();
 
-        var arcs = vis.selectAll('g.slice')
-                      .data(pie)
-                      .enter()
-                        .append('svg:g')
-                          .attr('class', 'slice');
+          if ( !newVal) { return; }
 
-        arcs.append('svg:path')
-            .attr('fill', function(d, i) { return color(i); })
-            .attr('d', arc);
+          var arc = d3.svg.arc().outerRadius(radius);
+
+          var pie = d3.layout.pie()
+                      .value(function(d) { return d.value; });
+
+          var arcs = vis.selectAll('g.slice')
+                        .data(pie)
+                        .enter()
+                          .append('svg:g')
+                            .attr('class', 'slice');
+
+          arcs.append('svg:path')
+              .attr('fill', function(d, i) { return color(i); })
+              .attr('d', arc);
+
+        }, true);
 
 
       }
